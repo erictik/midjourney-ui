@@ -5,12 +5,9 @@ import React, { ReactNode } from 'react';
 import {
   SmileOutlined,
 } from '@ant-design/icons'
-import withTheme from '../theme';
 
-import { Route, MenuDataItem } from '@ant-design/pro-layout/lib/typing'
-const ProLayout = dynamic(() => import('@ant-design/pro-layout'), {
-  ssr: false,
-})
+import { Route} from '@ant-design/pro-layout/lib/typing'
+import { ProLayout,MenuDataItem } from '@ant-design/pro-components';
 
 const ROUTES: Route = {
   path: '/',
@@ -42,7 +39,7 @@ interface MainProps {
   children: ReactNode;
 }
 export default function Main({ children }: MainProps) {
-  return withTheme(
+  return (
     <ProLayout
       logo={"logo.png"}
       title="AI Draw"
