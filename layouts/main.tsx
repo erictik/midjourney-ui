@@ -70,9 +70,7 @@ export default function Main(children: JSX.Element) {
         menuItemRender={menuItemRender}
         menuHeaderRender={menuHeaderRender}
       >
-        <PageContainer >
-          {children}
-        </PageContainer>
+        {children}
       </ProLayout>
     </ProConfigProvider>
   )
