@@ -3,6 +3,7 @@ import { Input, Button, List ,Image} from 'antd';
 import { SendOutlined } from '@ant-design/icons';
 import { marked } from 'marked';
 import { fetcherMidjourney } from '../request';
+import { PageContainer } from '@ant-design/pro-components';
 const { TextArea } = Input;
 
 const Index: React.FC = () => {
@@ -41,6 +42,7 @@ const Index: React.FC = () => {
 
   return (
     <div>
+        
       <List
         dataSource={messages}
         renderItem={renderMessage}

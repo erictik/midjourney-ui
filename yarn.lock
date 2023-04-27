@@ -119,29 +119,7 @@
     use-json-comparison "^1.0.5"
     use-media-antd-query "^1.1.0"
 
-"@ant-design/pro-layout@^7.10.3":
-  version "7.12.2"
-  resolved "https://registry.yarnpkg.com/@ant-design/pro-layout/-/pro-layout-7.12.2.tgz#d56e71dcead92c9f5a98a117fb92d6499df7d889"
-  integrity sha512-b7TWeadTT1fFkVvmWKdr2VcXdsUJ13Vldzu87Saoi/yCnJMsNJpNTKLOPRxPk0u0fVqG+f06cQV2XH9SY1E4lQ==
-  dependencies:
-    "@ant-design/icons" "^5.0.0"
-    "@ant-design/pro-provider" "^2.8.2"
-    "@ant-design/pro-utils" "^2.8.2"
-    "@babel/runtime" "^7.18.0"
-    "@umijs/route-utils" "^4.0.0"
-    "@umijs/use-params" "^1.0.9"
-    classnames "^2.2.6"
-    lodash.merge "^4.6.2"
-    omit.js "^2.0.2"
-    path-to-regexp "2.4.0"
-    rc-resize-observer "^1.1.0"
-    rc-util "^5.0.6"
-    swr "^2.0.0"
-    use-json-comparison "^1.0.3"
-    use-media-antd-query "^1.1.0"
-    warning "^4.0.3"
-
-"@ant-design/pro-layout@^7.12.3":
+"@ant-design/pro-layout@^7.10.3", "@ant-design/pro-layout@^7.12.3":
   version "7.12.3"
   resolved "https://registry.yarnpkg.com/@ant-design/pro-layout/-/pro-layout-7.12.3.tgz#ce8c9ea3aecd1b96af8098926e25d184bf1cb48b"
   integrity sha512-u0fwiytb0z46VqoDViRuhaaYdX5UWgcKuYReGgfnBsSMmKX2EN/jZPZgoEBIgf/boJTuL0qW7sgsxbDnYEoD7g==
@@ -218,20 +196,6 @@
     rc-util "^5.0.1"
     react-sortable-hoc "^2.0.0"
     use-json-comparison "^1.0.5"
-
-"@ant-design/pro-utils@^2.8.2":
-  version "2.8.2"
-  resolved "https://registry.yarnpkg.com/@ant-design/pro-utils/-/pro-utils-2.8.2.tgz#c3c947a4f54ec6908fa820c5fe5eb3a0cd2a952a"
-  integrity sha512-HD4R5O2i2ex8x3plLSmYKjSwnvWNsOb8XN9briKtSuFwpWQCd0VP6pnqO+WBX86mNropuEVxruUfRZcqnk+w0w==
-  dependencies:
-    "@ant-design/icons" "^5.0.0"
-    "@ant-design/pro-provider" "^2.8.2"
-    "@babel/runtime" "^7.18.0"
-    classnames "^2.2.6"
-    dayjs "^1.11.4"
-    rc-util "^5.0.6"
-    react-sortable-hoc "^2.0.0"
-    swr "^2.0.0"
 
 "@ant-design/pro-utils@^2.8.3":
   version "2.8.3"
