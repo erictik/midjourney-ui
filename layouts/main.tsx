@@ -1,9 +1,12 @@
 import dynamic from 'next/dynamic'
 import Link from 'next/link'
-import React, {  useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import {
   SmileOutlined,
+  GithubFilled,
+  PictureFilled,
+
 } from '@ant-design/icons'
 
 import { Route, MenuDataItem } from '@ant-design/pro-layout/lib/typing'
@@ -67,7 +70,35 @@ export default function Main(children: JSX.Element) {
         title="AI Draw"
         style={{ minHeight: '100vh' }}
         route={ROUTES}
+        avatarProps={{
+          src: 'logo.png',
+          title: 'Eric',
+        }}
+        actionsRender={(props) => {
+          if (props.isMobile) return [];
+          return [
+            <Link href="https://github.com/erictik/midjourney-ui" key="about">
+             <GithubFilled  style={{
+              fontSize: 24,
+             }}/>
+            </Link>,
+          ];
+        }}
+  
         menuItemRender={menuItemRender}
+        menuFooterRender={(props) => {
+          if (props?.collapsed) return undefined;
+          return (
+            <p
+              style={{
+                textAlign: 'center',
+                paddingBlockStart: 12,
+              }}
+            >
+              Power by Midjourney
+            </p>
+          );
+        }}
         menuHeaderRender={menuHeaderRender}
       >
         {children}
