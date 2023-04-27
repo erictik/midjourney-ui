@@ -2,6 +2,7 @@ name: docker build and push
 
 env:
   DOCKERHUB_USERNAME: erictik
+  APPVERSION: v1.1.${{ github.run_number }}
   TAG: erictik/${{ github.event.repository.name }}:1.1.${{ github.run_number }}
   LATEST_TAG: erictik/${{ github.event.repository.name }}:latest
 on:
@@ -34,3 +35,8 @@ jobs:
         push: true
         platforms: linux/amd64,linux/arm64
         tags: ${{ env.TAG }},${{ env.LATEST_TAG }}
+    - name: GH Release
+      uses: softprops/action-gh-release@v0.1.15
+      with:
+        tag_name: ${{ env.APPVERSION  }}
+        target_commitish: ${{ github.sha }}
