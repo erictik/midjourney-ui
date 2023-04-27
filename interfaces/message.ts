@@ -1,4 +1,4 @@
-interface Message {
-    text: string;
-    img: string;
-  }
+export interface Message {
+  text: string;
+  img: string;
+}

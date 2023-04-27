@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { Input, Button, List, Image, Typography } from 'antd';
 import { SendOutlined } from '@ant-design/icons';
-import { marked } from 'marked';
 import { MidjourneyAPi } from '../request';
 import { MJMessage } from 'midjourney';
+import { Message } from '../interfaces/message';
 
 const { TextArea } = Input;
 const { Text } = Typography
