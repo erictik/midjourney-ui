@@ -23,8 +23,9 @@ Host your own live version of Midjourney UI with Vercel.
 
 ```bash
 docker run --env-file .env -p 3000:3000 erictik/midjourney-ui
-
+```
 # or
+```bash
 docker run -e SALAI_TOKEN=xxxxxxxx  -e SERVER_ID=xxxxxxxx -e CHANNEL_ID=xxxxxxxx -p 3000:3000 erictik/midjourney-ui
 ```
 
@@ -37,8 +38,10 @@ cd midjourney-ui
 2. install dependencies
 ```bash
 npm install
+```
 # or
-yarn install
+```bash
+yarn 
 ```
 3. set the environment variables [How to get your Discord SALAI_TOKEN:](https://www.androidauthority.com/get-discord-token-3149920/)
 ```bash
@@ -49,7 +52,9 @@ export CHANNEL_ID=xxxxxxxx
 4. run the development server
 ```bash
 npm run dev
+```
 # or
+```bash
 yarn dev
 ```
 5. open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
