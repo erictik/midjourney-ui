@@ -4,7 +4,6 @@ WORKDIR /dist
 COPY .next .
 COPY public .
 COPY package*.json .
-COPY yarn.lock .
 COPY next.config.js .
 RUN yarn install --prod
 
