@@ -27,7 +27,7 @@ jobs:
         node-version: ${{ env.NODE_VERSION }}
     - name: yarn install&build
       run: |
-        yarn install
+        yarn 
         yarn build
     - name: Set up QEMU
       uses: docker/setup-qemu-action@v2

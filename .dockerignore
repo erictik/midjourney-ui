@@ -1,7 +1,5 @@
 
-# Next.js build output
-.next
-out
+
 # Dependency directories
 node_modules/
 jspm_packages/
