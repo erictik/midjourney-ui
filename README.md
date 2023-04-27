@@ -11,7 +11,7 @@ Midjourney UI is an open source txt2img UI for AI draw
 
 See [README.dev.md](README.dev.md) for development instructions.
 See a screenshot of the UI 
-![screenshot](public/Screenshot.png)
+![screenshot](images/Screenshot.png)
 
 ## Deploy 
 #### Vercel
