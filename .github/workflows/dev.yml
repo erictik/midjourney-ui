@@ -5,6 +5,7 @@ env:
   APPVERSION: v1.1.${{ github.run_number }}
   TAG: erictik/${{ github.event.repository.name }}:1.1.${{ github.run_number }}
   LATEST_TAG: erictik/${{ github.event.repository.name }}:latest
+  NODE_VERSION: 18.x
 on:
   workflow_dispatch:
   push:
@@ -20,6 +21,14 @@ jobs:
       contents: write
     steps:
     - uses: actions/checkout@v3
+    - name: Setup Node.js environment
+      uses: actions/setup-node@v2.5.2
+      with:
+        node-version: ${{ env.NODE_VERSION }}
+    - name: yarn install&build
+      run: |
+        yarn install
+        yarn build
     - name: Set up QEMU
       uses: docker/setup-qemu-action@v2
     - name: Set up Docker Buildx
