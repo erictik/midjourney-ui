@@ -2,43 +2,72 @@ import React, { useState } from 'react';
 import { Input, Button, List ,Image} from 'antd';
 import { SendOutlined } from '@ant-design/icons';
 import { marked } from 'marked';
-import { fetcherMidjourney } from '../request';
-import { PageContainer } from '@ant-design/pro-components';
+import { MidjourneyAPi } from '../request';
+import { MJMessage } from 'midjourney';
+
+
 const { TextArea } = Input;
+
+
+const ImgMessage: React.FC <Message>= ({text,timestamp}) => {
+  const html = marked(text);
+  // const [img, setImg] = useState('');
+  console.log(text)
+  // MidjourneyAPi(JSON.stringify({prompt:text}),(data :MJMessage)=>{
+  //   setImg(data.uri)
+  // })
+  return (
+    <List.Item>
+      <div dangerouslySetInnerHTML={{ __html: html }} />
+      <br />
+      {/* {img ??  <Image  width={200}  src={img} />} */}
+      <small>{timestamp.toLocaleTimeString()}</small>
+    </List.Item>
+  );
+}
+
+const renderMessage = ({text,timestamp,img}: Message) => {
+  const html = marked(text);
+  return (
+    <List.Item>
+    <div dangerouslySetInnerHTML={{ __html: html }} />
+    <br />
+     <Image  width={200}  src={img} />
+    <small>{timestamp.toLocaleTimeString()}</small>
+  </List.Item>
+  );
+};
 
 const Index: React.FC = () => {
   const [inputValue, setInputValue] = useState('');
+  const [inputDisable, setInputDisable] = useState(false);
+  // let messages: Message[] = []
+  
   const [messages, setMessages] = useState<Message[]>([]);
 
   const handleMessageSend = async () => {
-    const newMessage: Message = {
+    let newMessage: Message = {
       text: inputValue.trim(),
       img: "",
       timestamp: new Date(),
     };
-    if (!newMessage.text) {
-      return;
-    }
-    const data = await fetcherMidjourney(JSON.stringify({ prompt: newMessage.text }));
-    console.log({ data });
-    if (data) {
-      newMessage.img = data.img;
-      setMessages([...messages, newMessage]);
+  
+    if (newMessage.text) {
+      const oldMessages = messages;
       setInputValue('');
+      setInputDisable(true);
+      setMessages([...oldMessages, newMessage]);
+      console.log("newMessage.text")
+      await MidjourneyAPi(JSON.stringify({prompt:newMessage.text}),(data :MJMessage)=>{
+        console.log(data)
+        newMessage.img = data.uri;
+        setMessages([...oldMessages, newMessage]);
+      })
+      setInputDisable(false);
     }
   };
 
-  const renderMessage = (message: Message) => {
-    const html = marked(message.text);
-    return (
-      <List.Item>
-        <div dangerouslySetInnerHTML={{ __html: html }} />
-        <br />
-        {message.img ??  <Image  width={200}  src={message.img} />}
-        <small>{message.timestamp.toLocaleTimeString()}</small>
-      </List.Item>
-    );
-  };
+
 
   return (
     <div>
@@ -50,6 +79,7 @@ const Index: React.FC = () => {
       />
       <div style={{ position: 'relative' }}>
         <TextArea
+          disabled={inputDisable}
           value={inputValue}
           onChange={(e) => setInputValue(e.target.value)}
           onKeyDown={(e) => {
@@ -61,6 +91,7 @@ const Index: React.FC = () => {
               e.preventDefault();
             }
           }}
+          // size="large" 
           placeholder="Start typing your main idea..."
           autoSize={{ minRows: 1, maxRows: 6 }}
           style={{ paddingRight: 30 }}
@@ -68,6 +99,7 @@ const Index: React.FC = () => {
         <Button
           type="primary"
           onClick={handleMessageSend}
+          loading={inputDisable}
           icon={<SendOutlined style={{ color: "#000" }} />}
           title='Send'
           style={{ position: 'absolute', bottom: 0, right: 0, background: 'transparent', border: 'none', boxShadow: 'none' }}
@@ -78,3 +110,7 @@ const Index: React.FC = () => {
 };
 
 export default Index;
+function readChunks(reader: ReadableStreamDefaultReader<Uint8Array>) {
+  throw new Error('Function not implemented.');
+}
+
