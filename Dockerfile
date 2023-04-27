@@ -1,10 +1,9 @@
 # ---- Build ----
-FROM node:18-alpine AS base
+FROM node:18-alpine AS build
 WORKDIR /app
 ADD . . 
 RUN npm install
 RUN npm run build
-
 
 # ---- Production ----
 FROM node:18-alpine AS production
