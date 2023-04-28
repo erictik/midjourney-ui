@@ -41,7 +41,7 @@ const Index: React.FC = () => {
         alignItems: 'flex-start',
       }}>
         <Text >{text}</Text>
-        <Image className='ml-2 rounded-xl' width={300} src={img}
+        <Image className='ml-2 rounded-xl' width={400} src={img}
         />
       </List.Item>
     );
