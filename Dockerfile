@@ -5,8 +5,7 @@ COPY .next .
 COPY public .
 COPY package*.json .
 COPY next.config.js .
-RUN yarn install --prod
-
+RUN npm install --omit=dev
 # Expose the port the app will run on
 EXPOSE 3000
 
