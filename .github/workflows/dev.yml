@@ -44,7 +44,6 @@ jobs:
         context: .
         file: ./Dockerfile
         push: true
-        cache-from: 'from=type=registry,ref=${{ env.LATEST_TAG }}'
         platforms: linux/amd64,linux/arm64
         tags: ${{ env.TAG }},${{ env.LATEST_TAG }}
     - name: GH Release
