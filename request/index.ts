@@ -1,8 +1,7 @@
 import { MJMessage } from "midjourney";
 
-export const MidjourneyAPi = (body: string,loading?: (uri: MJMessage) => void) =>{
-  console.log('MidjourneyAPi');
-  return fetch('api/imagine', {
+const streamFetch = (url: string, body: string ,loading?: (uri: MJMessage) => void) => {
+  return fetch(url, {
     method: 'POST',
     headers: {
       'Content-type': 'application/json',
@@ -26,4 +25,16 @@ export const MidjourneyAPi = (body: string,loading?: (uri: MJMessage) => void) =
        console.log('Response body is null');
     }
   });
+}
+
+export const Imagine = (body: string,loading?: (uri: MJMessage) => void) =>{
+  return streamFetch('api/imagine',body,loading)
+}
+
+export const Upscale = (body: string,loading?: (uri: MJMessage) => void) =>{
+  return streamFetch('api/upscale',body,loading)
+}
+
+export const Variation = (body: string,loading?: (uri: MJMessage) => void) =>{
+  return streamFetch('api/upscale',body,loading)
 }

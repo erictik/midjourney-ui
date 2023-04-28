@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Input, Button, List, Image, Typography } from 'antd';
 import { SendOutlined } from '@ant-design/icons';
-import { MidjourneyAPi } from '../request';
+import { Imagine } from '../request';
 import { MJMessage } from 'midjourney';
 import { Message } from '../interfaces/message';
 
@@ -24,7 +24,7 @@ const Index: React.FC = () => {
       setInputDisable(true);
       setMessages([...oldMessages, newMessage]);
       console.log("newMessage.text")
-      await MidjourneyAPi(JSON.stringify({ prompt: newMessage.text }), (data: MJMessage) => {
+      await Imagine(JSON.stringify({ prompt: newMessage.text }), (data: MJMessage) => {
         console.log(data)
         newMessage.img = data.uri;
         setMessages([...oldMessages, newMessage]);
