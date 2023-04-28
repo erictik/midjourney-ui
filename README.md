@@ -24,7 +24,7 @@ Host your own live version of Midjourney UI with Vercel.
 ```bash
 docker run --env-file .env -p 3000:3000 erictik/midjourney-ui
 ```
-# or
+or
 ```bash
 docker run -e SALAI_TOKEN=xxxxxxxx  -e SERVER_ID=xxxxxxxx -e CHANNEL_ID=xxxxxxxx -p 3000:3000 erictik/midjourney-ui
 ```
@@ -39,7 +39,7 @@ cd midjourney-ui
 ```bash
 npm install
 ```
-# or
+or
 ```bash
 yarn 
 ```
@@ -53,7 +53,7 @@ export CHANNEL_ID=xxxxxxxx
 ```bash
 npm run dev
 ```
-# or
+or
 ```bash
 yarn dev
 ```
