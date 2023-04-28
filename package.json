@@ -36,8 +36,8 @@
     "@ant-design/pro-components": "^2.4.9",
     "@ant-design/pro-layout": "^7.10.3",
     "axios": "^1.3.6",
-    "next": "^13.1.1",
-    "midjourney": "^1.0.10"
+    "midjourney": "^1.0.12",
+    "next": "^13.1.1"
   },
   "keywords": [
     "midjourney-api",
