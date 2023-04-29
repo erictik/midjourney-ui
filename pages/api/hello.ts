@@ -13,8 +13,11 @@ export default async function handler() {
         )
       );
       controller.enqueue(encoder.encode("Vercel Edge Functions + Streaming"));
+      setTimeout(() => {
+        controller.enqueue(encoder.encode("Vercel Edge Functions + 33333"));
+        controller.close();
+      }, 2000);
       controller.enqueue(encoder.encode("</body></html>"));
-      controller.close();
     },
   });
 
