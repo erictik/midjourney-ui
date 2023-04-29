@@ -15,9 +15,9 @@ export default async function handler(
   const { prompt } = req.body;
   const stream = new Readable({
     read() {
-      this.push("hello");
+      this.push(new TextEncoder().encode("hello"));
       setTimeout(() => {
-        this.push("world");
+        this.push(new TextEncoder().encode("world"));
         this.push(null);
       }, 1000);
     },
