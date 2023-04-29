@@ -18,49 +18,22 @@ export default async function handler(
 ) {
   const { prompt } = req.body;
   const encoder = new TextEncoder();
-  const readable = new ReadableStream({
-    start(controller) {
-      // controller.enqueue(
-      //   encoder.encode(
-      //     "<html><head><title>Vercel Edge Functions + Streaming</title></head><body>"
-      //   )
-      // );
-      // controller.enqueue(encoder.encode("Vercel Edge Functions + Streaming"));
-      // controller.enqueue(encoder.encode("</body></html>"));
-      // controller.close();
-      client
-        .Imagine(prompt, (uri: string) => {
-          console.log("imagine.loading", uri);
-          controller.enqueue(encoder.encode(JSON.stringify({ uri })));
-        })
-        .then((msg) => {
-          console.log("imagine.done", msg);
-          controller.enqueue(encoder.encode(JSON.stringify(msg)));
-          controller.close();
-        })
-        .catch((err: ResponseError) => {
-          console.log("imagine.error", err);
-          controller.close();
-        });
-    },
+  const stream = new Readable({
+    read() {},
   });
-
-  // console.log("imagine.start", prompt);
-  // client
-  //   .Imagine(prompt, (uri: string) => {
-  //     console.log("imagine.loading", uri);
-  //     const data = new TextEncoder().encode(JSON.stringify({ uri }));
-  //     stream.push(data);
-  //   })
-  //   .then((msg) => {
-  //     const data = new TextEncoder().encode(JSON.stringify(msg));
-  //     console.log("imagine.done", msg);
-  //     stream.push(data);
-  //     stream.push(null);
-  //   })
-  //   .catch((err: ResponseError) => {
-  //     console.log("imagine.error", err);
-  //     stream.push(null);
-  //   });
-  return new Response(readable, {});
+  client
+    .Imagine(prompt, (uri: string) => {
+      console.log("upsale.loading", uri);
+      stream.push(encoder.encode(JSON.stringify({ uri })));
+    })
+    .then((msg) => {
+      console.log("upsale.done", msg);
+      stream.push(encoder.encode(JSON.stringify(msg)));
+      stream.push(null);
+    })
+    .catch((err: ResponseError) => {
+      console.log("upsale.error", err);
+      stream.push(null);
+    });
+  stream.pipe(res);
 }
