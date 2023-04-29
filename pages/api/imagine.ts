@@ -1,9 +1,6 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import { Midjourney } from "midjourney";
-import type { NextApiRequest, NextApiResponse } from "next";
 import { ResponseError } from "../../interfaces";
-import { Readable } from "stream";
-
 export const config = {
   runtime: "edge",
 };
@@ -12,14 +9,14 @@ const client = new Midjourney(
   <string>process.env.CHANNEL_ID,
   <string>process.env.SALAI_TOKEN
 );
-export default async function handler(
-  req: NextApiRequest,
-  res: NextApiResponse
-) {
-  const { prompt } = req.body;
+const handler = async (req: Request) => {
+  const { prompt } = await req.json();
+  console.log("imagine.handler", prompt);
   const encoder = new TextEncoder();
   const readable = new ReadableStream({
     start(controller) {
+      console.log("imagine.start", prompt);
+      console.log("ReadableStream", ReadableStream);
       client
         .Imagine(prompt, (uri: string) => {
           console.log("imagine.loading", uri);
@@ -37,4 +34,5 @@ export default async function handler(
     },
   });
   return new Response(readable, {});
-}
+};
+export default handler;
