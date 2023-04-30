@@ -16,7 +16,6 @@ const handler = async (req: Request) => {
   const readable = new ReadableStream({
     start(controller) {
       console.log("imagine.start", prompt);
-      console.log("ReadableStream", ReadableStream);
       client
         .Imagine(prompt, (uri: string) => {
           console.log("imagine.loading", uri);
