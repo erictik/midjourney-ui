@@ -21,7 +21,9 @@ const streamFetch = (
           break;
         }
         //Uint8Array to string
-        const str = new TextDecoder("utf-8").decode(value);
+        const str = new TextDecoder("utf-8").decode(value, {
+          stream: true,
+        });
         console.log(str);
         loading && loading(JSON.parse(str));
       }
