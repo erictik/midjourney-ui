@@ -3,7 +3,7 @@
 Midjourney UI is an open source txt2img UI for AI draw
 <div align="center">
 	<p>
-		<a href="https://discord.gg/dP95gZ8z"><img src="https://img.shields.io/discord/1082500871478329374?color=5865F2&logo=discord&logoColor=white" alt="Discord server" /></a>
+		<a href="https://discord.gg/TNnFp8MJ"><img src="https://img.shields.io/discord/1082500871478329374?color=5865F2&logo=discord&logoColor=white" alt="Discord server" /></a>
 	</p>
 </div>
 
