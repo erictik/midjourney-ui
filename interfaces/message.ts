@@ -3,5 +3,6 @@ export interface Message {
   img: string;
   msgID?: string;
   msgHash?: string;
+  content?: string;
   hasTag: boolean;
 }

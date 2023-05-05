@@ -9,6 +9,7 @@ const client = new Midjourney(
   <string>process.env.CHANNEL_ID,
   <string>process.env.SALAI_TOKEN
 );
+client.maxWait = 600;
 const handler = async (req: Request) => {
   const { prompt } = await req.json();
   console.log("imagine.handler", prompt);

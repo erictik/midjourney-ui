@@ -40,5 +40,5 @@ export const Upscale = (body: string, loading?: (uri: MJMessage) => void) => {
 };
 
 export const Variation = (body: string, loading?: (uri: MJMessage) => void) => {
-  return streamFetch("api/upscale", body, loading);
+  return streamFetch("api/variation", body, loading);
 };
