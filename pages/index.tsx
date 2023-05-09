@@ -5,6 +5,7 @@ import { Imagine, Upscale, Variation } from "../request";
 import { MJMessage } from "midjourney";
 import { Message } from "../interfaces/message";
 import Tag from "../components/tag";
+import IconFont from "../components/icon";
 const { TextArea } = Input;
 const { Text } = Typography;
 
@@ -12,6 +13,7 @@ const Index: React.FC = () => {
   const [inputValue, setInputValue] = useState("");
   const [inputDisable, setInputDisable] = useState(false);
   const [messages, setMessages] = useState<Message[]>([]);
+  const [isChatgpt, setIsChatgpt] = useState(false);
 
   const handleMessageSend = async () => {
     let newMessage: Message = {
@@ -180,7 +182,28 @@ const Index: React.FC = () => {
         dataSource={messages}
         renderItem={renderMessage}
       />
-      <div className="absolute z-10 w-2/4 xl:w-2/5 right-0 bottom-10 left-0 mx-auto ">
+      <div className="absolute z-10 w-3/4 xl:w-3/5 right-0 bottom-10 left-0 mx-auto ">
+        <Button
+          className="absolute bottom-0 -left-9 w-9"
+          type="primary"
+          title="chatgpt"
+          onClick={() => setIsChatgpt(!isChatgpt)}
+          style={{
+            bottom: 0,
+            background: "transparent",
+            border: "none",
+            boxShadow: "none",
+            padding: "4px 0",
+          }}
+        >
+          <IconFont
+            className={`${
+              isChatgpt ? "text-gray-900" : "text-zinc-400"
+            } text-xl text-center`}
+            type="icon-a-chatgpt"
+          />
+        </Button>
+
         <TextArea
           className="w-full"
           disabled={inputDisable}
