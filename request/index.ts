@@ -43,14 +43,19 @@ const streamFetch = async (
   }
 };
 
+const ApiPrefix = process.env.API_PREFIX || "api";
+
 export const Imagine = (body: string, loading?: (uri: MJMessage) => void) => {
-  return streamFetch("api/imagine", body, loading);
+  const apiURL = `${ApiPrefix}/imagine`;
+  return streamFetch(apiURL, body, loading);
 };
 
 export const Upscale = (body: string, loading?: (uri: MJMessage) => void) => {
-  return streamFetch("api/upscale", body, loading);
+  const apiURL = `${ApiPrefix}/upscale`;
+  return streamFetch(apiURL, body, loading);
 };
 
 export const Variation = (body: string, loading?: (uri: MJMessage) => void) => {
-  return streamFetch("api/variation", body, loading);
+  const apiURL = `${ApiPrefix}/variation`;
+  return streamFetch(apiURL, body, loading);
 };
