@@ -18,9 +18,9 @@ const handler = async (req: Request) => {
     start(controller) {
       console.log("imagine.start", prompt);
       client
-        .Imagine(prompt, (uri: string) => {
+        .Imagine(prompt, (uri: string, progress: string) => {
           console.log("imagine.loading", uri);
-          controller.enqueue(encoder.encode(JSON.stringify({ uri })));
+          controller.enqueue(encoder.encode(JSON.stringify({ uri, progress })));
         })
         .then((msg) => {
           console.log("imagine.done", msg);

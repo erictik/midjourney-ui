@@ -5,4 +5,5 @@ export interface Message {
   msgHash?: string;
   content?: string;
   hasTag: boolean;
+  progress?: string;
 }
