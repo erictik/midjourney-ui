@@ -5,7 +5,6 @@ import { Imagine, Upscale, Variation } from "../request";
 import { MJMessage } from "midjourney";
 import { Message } from "../interfaces/message";
 import Tag from "../components/tag";
-import IconFont from "../components/icon";
 
 const { TextArea } = Input;
 const { Text } = Typography;
@@ -14,7 +13,6 @@ const Index: React.FC = () => {
   const [inputValue, setInputValue] = useState("");
   const [inputDisable, setInputDisable] = useState(false);
   const [messages, setMessages] = useState<Message[]>([]);
-  const [isChatgpt, setIsChatgpt] = useState(false);
 
   const handleMessageSend = async () => {
     let newMessage: Message = {
