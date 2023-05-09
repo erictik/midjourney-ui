@@ -18,10 +18,18 @@ export default async function handler(req: Request) {
     start(controller) {
       console.log("variation.start", content);
       client
-        .Variation(content, index, msgId, msgHash, (uri: string) => {
-          console.log("variation.loading", uri);
-          controller.enqueue(encoder.encode(JSON.stringify({ uri })));
-        })
+        .Variation(
+          content,
+          index,
+          msgId,
+          msgHash,
+          (uri: string, progress: string) => {
+            console.log("variation.loading", uri);
+            controller.enqueue(
+              encoder.encode(JSON.stringify({ uri, progress }))
+            );
+          }
+        )
         .then((msg) => {
           console.log("variation.done", msg);
           controller.enqueue(encoder.encode(JSON.stringify(msg)));

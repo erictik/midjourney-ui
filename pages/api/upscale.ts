@@ -18,10 +18,18 @@ export default async function handler(req: Request) {
     start(controller) {
       console.log("upscale.start", content);
       client
-        .Upscale(content, index, msgId, msgHash, (uri: string) => {
-          console.log("upscale.loading", uri);
-          controller.enqueue(encoder.encode(JSON.stringify({ uri })));
-        })
+        .Upscale(
+          content,
+          index,
+          msgId,
+          msgHash,
+          (uri: string, progress: string) => {
+            console.log("upscale.loading", uri);
+            controller.enqueue(
+              encoder.encode(JSON.stringify({ uri, progress }))
+            );
+          }
+        )
         .then((msg) => {
           console.log("upscale.done", msg);
           controller.enqueue(encoder.encode(JSON.stringify(msg)));
