@@ -2179,10 +2179,10 @@ micromatch@^4.0.4, micromatch@^4.0.5:
     braces "^3.0.2"
     picomatch "^2.3.1"
 
-midjourney@^1.1.21:
-  version "1.1.21"
-  resolved "https://registry.yarnpkg.com/midjourney/-/midjourney-1.1.21.tgz#5a5d581f1427f9fc97f955effe2806f67c4d651b"
-  integrity sha512-mfg+1WvMD/RSi3lOwqPxgHM4Wva2ZLDh0t+cFvUkd6daTCT/2jWkVZhKbgl3bGb4uFnidJlCCZkEiWehOvoCNw==
+midjourney@^1.1.23:
+  version "1.1.23"
+  resolved "https://registry.yarnpkg.com/midjourney/-/midjourney-1.1.23.tgz#fab7f6e735669687c9c0c8a4b82314524c9d4087"
+  integrity sha512-RkzojG2K9lWMZEl2FTSNhXo7UQ38q/mU+5h5oddTpquemHZRo4ljlW/bsUB5/49t3OIKWLbEUq+XYx5c4mU6QA==
   dependencies:
     p-queue "^6.6.2"
     throat "^6.0.2"

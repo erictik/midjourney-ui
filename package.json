@@ -37,7 +37,7 @@
     "@ant-design/pro-layout": "^7.10.3",
     "axios": "^1.3.6",
     "eventsource-parser": "^1.0.0",
-    "midjourney": "^1.1.21",
+    "midjourney": "^1.1.23",
     "next": "^13.1.1"
   },
   "keywords": [
