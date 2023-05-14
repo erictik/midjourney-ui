@@ -4,12 +4,16 @@ import { ResponseError } from "../../interfaces";
 export const config = {
   runtime: "edge",
 };
-const client = new Midjourney(
-  <string>process.env.SERVER_ID,
-  <string>process.env.CHANNEL_ID,
-  <string>process.env.SALAI_TOKEN
-);
-client.maxWait = 600;
+
+const client = new Midjourney({
+  ServerId: <string>process.env.SERVER_ID,
+  ChannelId: <string>process.env.CHANNEL_ID,
+  SalaiToken: <string>process.env.SALAI_TOKEN,
+  Debug: true,
+  SessionId: process.env.SESSION_ID,
+  MaxWait: 600,
+});
+
 const handler = async (req: Request) => {
   const { prompt } = await req.json();
   console.log("imagine.handler", prompt);
