@@ -26,13 +26,12 @@ const Index: React.FC = () => {
       const oldMessages = messages;
       setInputDisable(true);
       setMessages([...oldMessages, newMessage]);
-      console.log("newMessage.text");
       await Imagine(
         JSON.stringify({ prompt: newMessage.text }),
         (data: MJMessage) => {
           console.log(data);
           newMessage.img = data.uri;
-          if (data.uri.endsWith(".png")) {
+          if (data.id) {
             newMessage.hasTag = true;
           }
           newMessage.msgHash = data.hash;
@@ -152,6 +151,12 @@ const Index: React.FC = () => {
     progress,
     content,
   }: Message) => {
+    if (process.env.NEXT_PUBLIC_IMAGE_PREFIX) {
+      img = img.replace(
+        "https://cdn.discordapp.com/",
+        process.env.NEXT_PUBLIC_IMAGE_PREFIX
+      );
+    }
     return (
       <List.Item
         className="flex flex-col space-y-4 justify-start items-start"
@@ -162,6 +167,7 @@ const Index: React.FC = () => {
         <Text>
           {text} {`(${progress})`}
         </Text>
+
         <Image className="ml-2 rounded-xl" width={400} src={img} />
 
         {hasTag && (
