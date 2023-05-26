@@ -659,6 +659,11 @@
   resolved "https://registry.npmjs.org/@umijs/use-params/-/use-params-1.0.9.tgz"
   integrity sha512-QlN0RJSBVQBwLRNxbxjQ5qzqYIGn+K7USppMoIOVlf7fxXHsnQZ2bEsa6Pm74bt6DVQxpUE8HqvdStn6Y9FV1w==
 
+"@vercel/analytics@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@vercel/analytics/-/analytics-1.0.1.tgz#38308a626c91866cb00a249c08bf65251e9b9d81"
+  integrity sha512-Ux0c9qUfkcPqng3vrR0GTrlQdqNJ2JREn/2ydrVuKwM3RtMfF2mWX31Ijqo1opSjNAq6rK76PwtANw6kl6TAow==
+
 acorn-jsx@^5.3.2:
   version "5.3.2"
   resolved "https://registry.npmjs.org/acorn-jsx/-/acorn-jsx-5.3.2.tgz"
@@ -2179,14 +2184,15 @@ micromatch@^4.0.4, micromatch@^4.0.5:
     braces "^3.0.2"
     picomatch "^2.3.1"
 
-midjourney@^2.1.30:
-  version "2.1.30"
-  resolved "https://registry.yarnpkg.com/midjourney/-/midjourney-2.1.30.tgz#087b8dd6e563ae02d580022297f0f495ca045aeb"
-  integrity sha512-l54MQDH0CjeeRPwbdfRzThgaVX3+G1A2FVJvBkpe18TMkBHW2Pnwx74HO3NnyKnu5nWbvs6oIWI78ptXDT5oGQ==
+midjourney@^2.2.33:
+  version "2.2.33"
+  resolved "https://registry.yarnpkg.com/midjourney/-/midjourney-2.2.33.tgz#8da761b03fdc738816a87d817070d152e6da5bfa"
+  integrity sha512-6bbO/vVqYnnSHSUx7AswqH5wXRHVPlu/RS8Lt8eJ4qySdarP9jSvhcx6fK7wrSw44UOTEAX2AICehheTzi2Q/A==
   dependencies:
     p-queue "^6.6.2"
     throat "^6.0.2"
     tslib "^2.5.0"
+    ws "^8.13.0"
 
 mime-db@1.52.0:
   version "1.52.0"
@@ -3540,6 +3546,11 @@ wrappy@1:
   version "1.0.2"
   resolved "https://registry.npmjs.org/wrappy/-/wrappy-1.0.2.tgz"
   integrity sha512-l4Sp/DRseor9wL6EvV2+TuQn63dMkPjZ/sp9XkghTEbV9KlPS1xUsZ3u7/IQO4wxtcFB4bgpQPRcR3QCvezPcQ==
+
+ws@^8.13.0:
+  version "8.13.0"
+  resolved "https://registry.yarnpkg.com/ws/-/ws-8.13.0.tgz#9a9fb92f93cf41512a0735c8f4dd09b8a1211cd0"
+  integrity sha512-x9vcZYTrFPC7aSIbj7sRCYo7L/Xb8Iy+pW0ng0wt2vCJv7M9HOMy0UoN3rr+IFC7hb7vXoqS+P9ktyLLLhO+LA==
 
 yallist@^4.0.0:
   version "4.0.0"
