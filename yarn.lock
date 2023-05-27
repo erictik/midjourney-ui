@@ -311,6 +311,11 @@
   resolved "https://registry.npmjs.org/@eslint/js/-/js-8.39.0.tgz"
   integrity sha512-kf9RB0Fg7NZfap83B3QOqOGg9QmD9yBudqQXzzOtn3i4y7ZUXe5ONeW34Gwi+TxhH4mvj72R1Zc300KUMa9Bng==
 
+"@huggingface/inference@^2.5.0":
+  version "2.5.0"
+  resolved "https://registry.yarnpkg.com/@huggingface/inference/-/inference-2.5.0.tgz#8e14ee6696e91aecb132c90d3b07be8373e70338"
+  integrity sha512-X3NSdrWAKNTLAsEKabH48Wc+Osys+S7ilRcH1bf9trSDmJlzPVXDseXMRBHCFPCYd5AAAIakhENO4zCqstVg8g==
+
 "@humanwhocodes/config-array@^0.11.8":
   version "0.11.8"
   resolved "https://registry.npmjs.org/@humanwhocodes/config-array/-/config-array-0.11.8.tgz"
@@ -2179,12 +2184,14 @@ micromatch@^4.0.4, micromatch@^4.0.5:
     braces "^3.0.2"
     picomatch "^2.3.1"
 
-midjourney@^2.2.33:
-  version "2.2.33"
-  resolved "https://registry.yarnpkg.com/midjourney/-/midjourney-2.2.33.tgz#8da761b03fdc738816a87d817070d152e6da5bfa"
-  integrity sha512-6bbO/vVqYnnSHSUx7AswqH5wXRHVPlu/RS8Lt8eJ4qySdarP9jSvhcx6fK7wrSw44UOTEAX2AICehheTzi2Q/A==
+midjourney@^2.2.37:
+  version "2.2.37"
+  resolved "https://registry.yarnpkg.com/midjourney/-/midjourney-2.2.37.tgz#602e864a5ef0c09d04e0fcc7c06644c97cae7d9f"
+  integrity sha512-LHCSt55irtmEEwSUBPV+le7XBy3ofZQiSoU9H1iHIHTIwJNOWbptkFAfuZYA0c22l199mG2BXCC1vNHd4BuMnA==
   dependencies:
+    "@huggingface/inference" "^2.5.0"
     p-queue "^6.6.2"
+    snowyflake "^2.0.0"
     throat "^6.0.2"
     tslib "^2.5.0"
     ws "^8.13.0"
@@ -3137,6 +3144,11 @@ slash@^4.0.0:
   version "4.0.0"
   resolved "https://registry.npmjs.org/slash/-/slash-4.0.0.tgz"
   integrity sha512-3dOsAHXXUkQTpOYcoAxLIorMTp4gIQr5IW3iVb7A7lFIp0VHhnynm9izx6TssdrIcVIESAlVjtnO2K8bg+Coew==
+
+snowyflake@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/snowyflake/-/snowyflake-2.0.0.tgz#9514fb3540b290b71fec8efb6a737d32c4dc8105"
+  integrity sha512-BxeqV0KJxJASu6EBJGUkX194Zhh37AEa0ow/JRK39icWbLTG9Wl/7LAL6a/ZMSjNm4O9pZk6QoLcWP7f/YKmtA==
 
 source-map-js@^1.0.2:
   version "1.0.2"
