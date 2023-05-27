@@ -13,6 +13,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
     SalaiToken: <string>process.env.SALAI_TOKEN,
     Debug: true,
     MaxWait: 600,
+    Ws: true,
   });
   await client.init();
   console.log("imagine.handler", req.body);
