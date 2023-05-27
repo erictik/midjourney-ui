@@ -14,7 +14,6 @@
   "devDependencies": {
     "@ant-design/cssinjs": "^1.3.0",
     "@ant-design/static-style-extract": "~1.0.1",
-    "@next/font": "^13.1.1",
     "@types/marked": "^4.0.8",
     "@types/node": "^18.11.17",
     "@types/react": "^18.0.26",
