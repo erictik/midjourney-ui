@@ -3,7 +3,11 @@ import { Midjourney } from "midjourney";
 import { ResponseError } from "../../interfaces";
 import { NextApiRequest, NextApiResponse } from "next";
 import { Readable } from "stream";
-
+export const config = {
+  api: {
+    timeout: 600,
+  },
+};
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   const client = new Midjourney({
     ServerId: <string>process.env.SERVER_ID,
