@@ -397,11 +397,6 @@
   dependencies:
     glob "7.1.7"
 
-"@next/font@^13.1.1":
-  version "13.3.1"
-  resolved "https://registry.npmjs.org/@next/font/-/font-13.3.1.tgz"
-  integrity sha512-S8Shizt4xlHDItXTAowEoyktiaLIEzTxJeXPaRu+VDeb21yXu7kMX2DUQE5Un+kb/ViCaAdWlyltCuS2sywEjA==
-
 "@next/swc-darwin-arm64@13.3.1":
   version "13.3.1"
   resolved "https://registry.npmjs.org/@next/swc-darwin-arm64/-/swc-darwin-arm64-13.3.1.tgz"
