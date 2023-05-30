@@ -12,8 +12,8 @@ const handler = async (req: Request) => {
     ServerId: <string>process.env.SERVER_ID,
     ChannelId: <string>process.env.CHANNEL_ID,
     SalaiToken: <string>process.env.SALAI_TOKEN,
+    HuggingFaceToken: <string>process.env.HUGGINGFACE_TOKEN,
     Debug: true,
-    MaxWait: 600,
     Ws: true,
   });
   await client.init();

@@ -58,12 +58,16 @@ or
 yarn
 ```
 
-3. set the environment variables [How to get your Discord SALAI_TOKEN:](https://www.androidauthority.com/get-discord-token-3149920/)
-
+3. set the environment variables  
+ [How to get your Discord SALAI_TOKEN](https://www.androidauthority.com/get-discord-token-3149920/)  
+ [How to HUGGINGFACE_TOKEN](https://huggingface.co/docs/hub/security-tokens)  
+ 
 ```bash
 export SALAI_TOKEN=xxxxxxxx
 export SERVER_ID=xxxxxxxx
 export CHANNEL_ID=xxxxxxxx
+export HUGGINGFACE_TOKEN=xxx
+
 ```
 
 4. run the development server

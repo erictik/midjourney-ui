@@ -21,6 +21,7 @@
     "antd": "^5.1.0",
     "autoprefixer": "^10.4.14",
     "cross-env": "^7.0.3",
+    "edge-runtime": "^2.3.0",
     "eslint": "^8.30.0",
     "eslint-config-next": "^13.1.1",
     "postcss": "^8.4.23",
@@ -38,7 +39,7 @@
     "axios": "^1.3.6",
     "eventsource-parser": "^1.0.0",
     "midjourney": "^2.3.42",
-    "next": "^13.1.1"
+    "next": "^13.4.4"
   },
   "keywords": [
     "midjourney-api",

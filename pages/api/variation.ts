@@ -4,16 +4,18 @@ import { ResponseError } from "../../interfaces";
 export const config = {
   runtime: "edge",
 };
-const client = new Midjourney({
-  ServerId: <string>process.env.SERVER_ID,
-  ChannelId: <string>process.env.CHANNEL_ID,
-  SalaiToken: <string>process.env.SALAI_TOKEN,
-  Debug: true,
-  MaxWait: 600,
-});
 export default async function handler(req: Request) {
   const { content, index, msgId, msgHash } = await req.json();
   console.log("variation.handler", content);
+  const client = new Midjourney({
+    ServerId: <string>process.env.SERVER_ID,
+    ChannelId: <string>process.env.CHANNEL_ID,
+    SalaiToken: <string>process.env.SALAI_TOKEN,
+    HuggingFaceToken: <string>process.env.HUGGINGFACE_TOKEN,
+    Debug: true,
+    Ws: true,
+  });
+  await client.init();
   const encoder = new TextEncoder();
   const readable = new ReadableStream({
     start(controller) {
