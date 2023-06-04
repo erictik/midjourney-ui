@@ -18,9 +18,9 @@ const handler = async (req: Request) => {
     SalaiToken: <string>process.env.SALAI_TOKEN,
     HuggingFaceToken: <string>process.env.HUGGINGFACE_TOKEN,
     Debug: true,
-    // Ws: true,
+    Ws: true,
   });
-  // await client.init();
+  await client.init();
   const encoder = new TextEncoder();
   const readable = new ReadableStream({
     start(controller) {
