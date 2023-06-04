@@ -2231,10 +2231,10 @@ micromatch@^4.0.4, micromatch@^4.0.5:
     braces "^3.0.2"
     picomatch "^2.3.1"
 
-midjourney@^2.4.47:
-  version "2.4.47"
-  resolved "https://registry.yarnpkg.com/midjourney/-/midjourney-2.4.47.tgz#9074d8e07c5bf17cca39f4b297a3f2c8ade9e19f"
-  integrity sha512-wZG1WXhiGVi/yqAo4iGAOamB3XiTdWqKSysJTqnASkUPL7x9xgx2O2td+yDGqPOSV/WYjdsa2KS398JxRHu6lQ==
+midjourney@^2.4.49:
+  version "2.4.49"
+  resolved "https://registry.yarnpkg.com/midjourney/-/midjourney-2.4.49.tgz#3247cc541a42c50e77da12fbb4967c9c9a5deff3"
+  integrity sha512-hWb711laBgb7zLUYwkIFwVF2vWQJIPanr+ADiLPwLCQmmwRa4M/y721xK3ddt/RBFTW4Qml6aWXOFK9ChZrVUA==
   dependencies:
     "@huggingface/inference" "^2.5.0"
     isomorphic-ws "^5.0.0"
