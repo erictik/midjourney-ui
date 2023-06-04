@@ -2231,10 +2231,10 @@ micromatch@^4.0.4, micromatch@^4.0.5:
     braces "^3.0.2"
     picomatch "^2.3.1"
 
-midjourney@^2.3.42:
-  version "2.3.42"
-  resolved "https://registry.yarnpkg.com/midjourney/-/midjourney-2.3.42.tgz#e414a9707efcc4214674afc77b6bf57396e3c717"
-  integrity sha512-RUuhVQ8aipAPhIlKUzU2Px4eCcZVYcGUAJ363bABX+m3ozUCZB8vZAUbdZGcKhQBYPvc4Ym8T24VLny8mmWEgg==
+midjourney@^2.4.44:
+  version "2.4.44"
+  resolved "https://registry.yarnpkg.com/midjourney/-/midjourney-2.4.44.tgz#f999d1ffe62ee3762d8eb5953ba914cfe7d1710e"
+  integrity sha512-2Qo3hDnyyX/VJdlJ6z983wtKn/NP/AkKbreC6CbkP21hAILSjthqPjriP2hO8zaY/oeyKgMVtSKoH12VV5qVJw==
   dependencies:
     "@huggingface/inference" "^2.5.0"
     isomorphic-ws "^5.0.0"
@@ -2242,6 +2242,7 @@ midjourney@^2.3.42:
     snowyflake "^2.0.0"
     throat "^6.0.2"
     tslib "^2.5.0"
+    websocket-ts "^1.1.1"
     ws "^8.13.0"
 
 mime-db@1.52.0:
@@ -3586,6 +3587,11 @@ warning@^4.0.3:
   integrity sha512-rpJyN222KWIvHJ/F53XSZv0Zl/accqHR8et1kpaMTD/fLCRxtV8iX8czMzY7sVZupTI3zcUTg8eycS2kNF9l6w==
   dependencies:
     loose-envify "^1.0.0"
+
+websocket-ts@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/websocket-ts/-/websocket-ts-1.1.1.tgz#de482da5e0c714ebc58a43fe94157e5a855f2828"
+  integrity sha512-rm+S60J74Ckw5iizzgID12ju+OfaHAa6dhXhULIOrXkl0e05RzxfY42/vMStpz5jWL3iz9mkyjPcFUY1IgI0fw==
 
 which-boxed-primitive@^1.0.2:
   version "1.0.2"

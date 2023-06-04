@@ -38,7 +38,7 @@
     "@vercel/analytics": "^1.0.1",
     "axios": "^1.3.6",
     "eventsource-parser": "^1.0.0",
-    "midjourney": "^2.3.42",
+    "midjourney": "^2.4.44",
     "next": "^13.4.4"
   },
   "keywords": [
