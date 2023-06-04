@@ -7,6 +7,7 @@ export const config = {
 
 const handler = async (req: Request) => {
   const { prompt } = await req.json();
+
   console.log("imagine.handler", prompt);
   const client = new Midjourney({
     ServerId: <string>process.env.SERVER_ID,
