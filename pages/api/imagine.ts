@@ -4,13 +4,10 @@ import { ResponseError } from "../../interfaces";
 export const config = {
   runtime: "edge",
 };
-import WebSocket from "isomorphic-ws";
 
 const handler = async (req: Request) => {
   const { prompt } = await req.json();
-  if (typeof global !== "undefined") {
-    (global as any).WebSocket = WebSocket;
-  }
+
   console.log("imagine.handler", prompt);
   const client = new Midjourney({
     ServerId: <string>process.env.SERVER_ID,
