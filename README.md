@@ -24,15 +24,17 @@ See a screenshot of the UI
 Host your own live version of Midjourney UI with Vercel.
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Ferictik%2Fmidjourney-ui)
+### Netlify
+Netlify can use ws  
+
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/erictik/midjourney-ui)
 
 #### Docker
 
 ```bash
 docker run --env-file .env -p 3000:3000 erictik/midjourney-ui
 ```
-
 or
-
 ```bash
 docker run -e SALAI_TOKEN=xxxxxxxx  -e SERVER_ID=xxxxxxxx -e CHANNEL_ID=xxxxxxxx -p 3000:3000 erictik/midjourney-ui
 ```
