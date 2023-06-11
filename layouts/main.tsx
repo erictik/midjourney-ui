@@ -5,6 +5,7 @@ import React, { useEffect, useState } from 'react';
 import {
   SmileOutlined,
   GithubFilled,
+  WechatOutlined,
   PictureFilled,
 
 } from '@ant-design/icons'
@@ -22,6 +23,11 @@ const ROUTES: Route = {
       path: '/',
       name: 'MidJourney',
       icon: <SmileOutlined />,
+    },
+    {
+      path: '/chatgpt',
+      name: 'ChatGPT',
+      icon: <WechatOutlined />,
     },
   ],
 }
