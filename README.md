@@ -88,6 +88,8 @@ yarn dev
 
 ## Route map
 
+- [x] imagine
 - [x] upsclae & variation
+- [ ] prompt help
 - [ ] chatgpt prompt generation
 - [ ] history of generated images
