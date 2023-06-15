@@ -2260,10 +2260,10 @@ micromatch@^4.0.4, micromatch@^4.0.5:
     braces "^3.0.2"
     picomatch "^2.3.1"
 
-midjourney@^2.7.74:
-  version "2.7.74"
-  resolved "https://registry.yarnpkg.com/midjourney/-/midjourney-2.7.74.tgz#dc036df02ad750284a8685fcad68e20ecff30b43"
-  integrity sha512-6co3fLUvYZ1xCNztO4zEapRTZw9EM/3m0KOHbDP3DfkB0Z3HvB1jwYGUJy1smHYExGJSsVg1t8edSLBu0bQ4Qg==
+midjourney@^2.7.75:
+  version "2.7.75"
+  resolved "https://registry.yarnpkg.com/midjourney/-/midjourney-2.7.75.tgz#9d7821b0845e69eb39716b0e8ba756479eeacea9"
+  integrity sha512-QtyebV4EJifqetdBoy2tI7wFZDd1vRdFkh7xA3X8x76B5nS+KIy8Vhw6XBsuTDiYdl48y4PE9iQdFq7GK9zsMA==
   dependencies:
     "@huggingface/inference" "^2.5.0"
     isomorphic-ws "^5.0.0"
