@@ -36,11 +36,9 @@
     "@ant-design/pro-components": "^2.4.9",
     "@ant-design/pro-layout": "^7.10.3",
     "@vercel/analytics": "^1.0.1",
-    "axios": "^1.3.6",
     "eventsource-parser": "^1.0.0",
-    "midjourney": "^2.5.61",
-    "next": "^13.4.4",
-    "openai": "^3.2.1"
+    "midjourney": "^2.7.71",
+    "next": "^13.4.4"
   },
   "keywords": [
     "midjourney-api",
