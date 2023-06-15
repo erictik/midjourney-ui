@@ -15,7 +15,7 @@ const handler = async (req: Request) => {
     SalaiToken: <string>process.env.SALAI_TOKEN,
     HuggingFaceToken: <string>process.env.HUGGINGFACE_TOKEN,
     Debug: true,
-    Ws: true,
+    Ws: process.env.WS === "true",
   });
   await client.init();
   const encoder = new TextEncoder();
@@ -30,10 +30,12 @@ const handler = async (req: Request) => {
         .then((msg) => {
           console.log("imagine.done", msg);
           controller.enqueue(encoder.encode(JSON.stringify(msg)));
+          client.Close();
           controller.close();
         })
         .catch((err: ResponseError) => {
           console.log("imagine.error", err);
+          client.Close();
           controller.close();
         });
     },

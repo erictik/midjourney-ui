@@ -14,7 +14,7 @@ export default async function handler(req: Request) {
     SalaiToken: <string>process.env.SALAI_TOKEN,
     HuggingFaceToken: <string>process.env.HUGGINGFACE_TOKEN,
     Debug: true,
-    Ws: true,
+    Ws: process.env.WS === "true",
   });
   await client.init();
   const encoder = new TextEncoder();
@@ -37,10 +37,12 @@ export default async function handler(req: Request) {
         .then((msg) => {
           console.log("upscale.done", msg);
           controller.enqueue(encoder.encode(JSON.stringify(msg)));
+          client.Close();
           controller.close();
         })
         .catch((err: ResponseError) => {
           console.log("upscale.error", err);
+          client.Close();
           controller.close();
         });
     },
