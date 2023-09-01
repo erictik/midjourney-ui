@@ -5,7 +5,7 @@ export const config = {
   runtime: "edge",
 };
 export default async function handler(req: Request) {
-  const { content, index, msgId, msgHash } = await req.json();
+  const { content, index, msgId, msgHash, flags } = await req.json();
   console.log("variation.handler", content);
   const client = new Midjourney({
     ServerId: <string>process.env.SERVER_ID,
@@ -22,16 +22,19 @@ export default async function handler(req: Request) {
       console.log("variation.start", content);
       client
         .Variation(
-          content,
-          index,
-          msgId,
-          msgHash,
-          (uri: string, progress: string) => {
-            console.log("variation.loading", uri);
-            controller.enqueue(
-              encoder.encode(JSON.stringify({ uri, progress }))
-            );
-          }
+            {
+              index,
+              msgId,
+              hash: msgHash,
+              content,
+              flags,
+              ...(uri: string, progress: string) => {
+                console.log("variation.loading", uri);
+                controller.enqueue(
+                    encoder.encode(JSON.stringify({ uri, progress }))
+                );
+              }
+            }
         )
         .then((msg) => {
           console.log("variation.done", msg);
