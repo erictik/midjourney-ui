@@ -86,6 +86,17 @@ yarn dev
 
 5. open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
+## Build
+
+```bash
+# if needed
+yarn install --frozen-lockfile
+
+yarn build
+
+docker build -t erictik/midjourney-ui
+```
+
 ## Route map
 
 - [x] imagine

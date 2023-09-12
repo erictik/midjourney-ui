@@ -38,6 +38,7 @@ const Index: React.FC = () => {
           newMessage.msgID = data.id;
           newMessage.progress = data.progress;
           newMessage.content = data.content;
+          newMessage.flags = data.flags;
           setMessages([...oldMessages, newMessage]);
         }
       );
@@ -70,6 +71,7 @@ const Index: React.FC = () => {
         newMessage.msgID = data.id;
         newMessage.content = data.content;
         newMessage.progress = data.progress;
+        newMessage.flags = data.flags;
         setMessages([...oldMessages, newMessage]);
       }
     );
@@ -102,6 +104,7 @@ const Index: React.FC = () => {
         newMessage.msgID = data.id;
         newMessage.content = data.content;
         newMessage.progress = data.progress;
+        newMessage.flags = data.flags;
         setMessages([...oldMessages, newMessage]);
       }
     );
@@ -192,14 +195,13 @@ const Index: React.FC = () => {
 
   return (
     <div className="w-full mx-auto px-4 h-full overflow-y-hidden">
-      <List
-        className=" mx-auto xl:w-3/5 w-4/5 justify-start overflow-y-auto"
-        style={{
-          height: "calc(100vh - 96px)",
-        }}
-        dataSource={messages}
-        renderItem={renderMessage}
-      />
+        <List
+            style={{
+                height: "calc(100vh - 96px)",
+            }}
+            dataSource={messages}
+            renderItem={renderMessage}
+        />
       <div className="absolute z-10 w-3/4 xl:w-3/5 right-0 bottom-10 left-0 mx-auto ">
         <TextArea
           className="w-full"
