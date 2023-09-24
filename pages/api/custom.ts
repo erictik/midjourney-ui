@@ -7,8 +7,8 @@ export const config = {
 };
 
 export default async function handler(req: Request) {
-    const {content, index, msgId, msgHash, flags} = await req.json();
-    console.log("upscale.handler", content);
+    const {content, msgId, flags, customId, label, prompt} = await req.json();
+    console.log("custom.handler", content);
     const client = new Midjourney({
         ServerId: <string>process.env.SERVER_ID,
         ChannelId: <string>process.env.CHANNEL_ID,
@@ -21,16 +21,15 @@ export default async function handler(req: Request) {
     const encoder = new TextEncoder();
     const readable = new ReadableStream({
         start(controller) {
-            console.log("upscale.start", content);
+            console.log("custom.start", content);
             client
-                .Upscale(
+                .Custom(
                     {
-                        index,
                         msgId,
-                        hash: msgHash,
-                        content,
                         flags,
-                        ...(uri: string, progress: string) => {
+                        customId,
+                        content: prompt,
+                        loading: (uri: string, progress: string) => {
                             console.log("upscale.loading", uri);
                             controller.enqueue(
                                 encoder.encode(JSON.stringify({uri, progress}))
