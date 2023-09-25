@@ -107,7 +107,7 @@ const Index: React.FC = () => {
 
         <div className="flex flex-wrap">
         {
-          options && options.map(option => (
+          options && options.map((option: { label: string, custom: string }) => (
             <Button
               key={option.label}
               className="m-2"
