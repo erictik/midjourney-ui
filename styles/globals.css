@@ -96,7 +96,7 @@ body {
 }
 
 
-label, h1, h2, .ant-form-text, .ant-divider-inner-text, a {
+label, h1, h2, .ant-form-text, .ant-divider-inner-text, .ant-typography, a {
   color: rgb(var(--foreground-rgb)) !important;
 }
 

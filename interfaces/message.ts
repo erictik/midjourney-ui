@@ -5,6 +5,7 @@ export interface Message {
   msgID?: string;
   msgHash?: string;
   content?: string;
-  hasTag: boolean;
   progress?: string;
+  options?: any;
+  prompt?: string;
 }

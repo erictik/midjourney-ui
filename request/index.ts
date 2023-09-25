@@ -24,7 +24,12 @@ const streamFetch = async (
       buffer += new TextDecoder("utf-8").decode(value);
 
       let startIdx = 0;
-      let endIdx = buffer.indexOf("}");
+      let endIdx = -1;
+      const regex = /}/g;
+      let match;
+      while ((match = regex.exec(buffer)) !== null) {
+        endIdx = match.index;
+      }
       while (endIdx !== -1) {
         const jsonString = buffer.substring(startIdx, endIdx + 1);
         try {
@@ -53,4 +58,8 @@ export const Upscale = (body: string, loading?: (uri: MJMessage) => void) => {
 
 export const Variation = (body: string, loading?: (uri: MJMessage) => void) => {
   return streamFetch("api/variation/", body, loading);
+};
+
+export const Custom = (body: string, loading?: (uri: MJMessage) => void) => {
+  return streamFetch("api/custom/", body, loading);
 };
