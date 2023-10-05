@@ -6,11 +6,12 @@ const NoAuthContext = createContext<AuthContextType>({
   user: null,
   login: () => {},
   logout: () => {},
-  authReady: false
+  authReady: false,
+  type: "no",
 });
 
 export const NoAuthContextProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
-  const [user] = useState<User | null>({user_metadata: {full_name: "Eric"}});
+  const [user] = useState<User | null>({user_metadata: {full_name: process.env.NEXT_PUBLIC_AUTH_NAME || "Eric"}});
   const [authReady] = useState(true);
 
   const login = () => {};
@@ -21,7 +22,8 @@ export const NoAuthContextProvider: React.FC<{ children: ReactNode }> = ({ child
     user,
     login,
     logout,
-    authReady
+    authReady,
+    type: "no",
   };
 
   return <NoAuthContext.Provider value={contextValue} >{children}</NoAuthContext.Provider>;

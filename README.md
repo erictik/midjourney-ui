@@ -103,4 +103,5 @@ docker build -t erictik/midjourney-ui
 - [x] upsclae & variation
 - [ ] prompt help
 - [ ] chatgpt prompt generation
-- [ ] history of generated images
+- [x] history of generated images
+- [x] Vary Region

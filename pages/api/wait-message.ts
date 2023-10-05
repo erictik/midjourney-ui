@@ -1,14 +1,14 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
-import {Midjourney} from "midjourney";
-import {ResponseError} from "../../interfaces";
+import { Midjourney } from "midjourney";
+import { ResponseError } from "../../interfaces";
 
 export const config = {
     runtime: "edge",
 };
 
 export default async function handler(req: Request) {
-    const {content, index, msgId, msgHash, flags} = await req.json();
-    console.log("upscale.handler", content);
+    const { content } = await req.json();
+    console.log("waiting.handler", content);
     const client = new Midjourney({
         ServerId: <string>process.env.SERVER_ID,
         ChannelId: <string>process.env.CHANNEL_ID,
@@ -21,31 +21,22 @@ export default async function handler(req: Request) {
     const encoder = new TextEncoder();
     const readable = new ReadableStream({
         start(controller) {
-            console.log("upscale.start", content);
+            console.log("waiting.start", content);
             client
-                .Upscale(
-                    {
-                        index,
-                        msgId,
-                        hash: msgHash,
-                        content,
-                        flags,
-                        ...(uri: string, progress: string) => {
-                            console.log("upscale.loading", uri);
-                            controller.enqueue(
-                                encoder.encode(JSON.stringify({uri, progress}))
-                            );
-                        }
-                    }
-                )
+                .WaitMessage(content,  (uri: string, progress: string) => {
+                    console.log("upscale.loading", uri);
+                    controller.enqueue(
+                        encoder.encode(JSON.stringify({ uri, progress }))
+                    );
+                })
                 .then((msg) => {
-                    console.log("upscale.done", msg);
+                    console.log("waiting.done", msg);
                     controller.enqueue(encoder.encode(JSON.stringify(msg)));
                     client.Close();
                     controller.close();
                 })
                 .catch((err: ResponseError) => {
-                    console.log("upscale.error", err);
+                    console.log("waiting.error", err);
                     client.Close();
                     controller.close();
                 });

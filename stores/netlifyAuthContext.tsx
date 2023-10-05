@@ -7,7 +7,8 @@ const NetlifyAuthContext = createContext<AuthContextType>({
   user: null,
   login: () => {},
   logout: () => {},
-  authReady: false
+  authReady: false,
+  type: "netlify",
 });
 
 export const NetlifyAuthContextProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
@@ -54,7 +55,8 @@ export const NetlifyAuthContextProvider: React.FC<{ children: ReactNode }> = ({ 
     user,
     login,
     logout,
-    authReady
+    authReady,
+    type: "netlify",
   };
 
   return <NetlifyAuthContext.Provider value={contextValue} >{children}</NetlifyAuthContext.Provider>;

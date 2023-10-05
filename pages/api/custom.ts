@@ -38,7 +38,7 @@ export default async function handler(req: Request) {
                     }
                 )
                 .then((msg) => {
-                    console.log("upscale.done", msg);
+                    console.log("custom.done", msg);
                     controller.enqueue(encoder.encode(JSON.stringify(msg)));
                     client.Close();
                     controller.close();
