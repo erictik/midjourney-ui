@@ -105,3 +105,41 @@ docker build -t erictik/midjourney-ui
 - [ ] chatgpt prompt generation
 - [x] history of generated images
 - [x] Vary Region
+
+## Enable Auth
+1. No auth
+
+No addition environment variables.
+
+2. Code
+```bash
+NEXT_PUBLIC_AUTH_PROVIDER=code
+NEXT_PUBLIC_AUTH_CODE=123456
+```
+Input code to launch app
+![code](./images/codelogin.png)
+
+3. Netlify
+```bash
+export NEXT_PUBLIC_AUTH_PROVIDER=netlify
+```
+Need open netlify identity on netlify.
+
+## Enable Vary Region
+![Vary Region](./images/varyregion.png)
+1. Local setting
+```bash
+# for macOS
+export PUPPETEER_CHROME_BIN="/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
+
+# for windows (Depends on your installation path)
+export PUPPETEER_CHROME_BIN="C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe"
+```
+
+2. Docker
+
+Already be set up, can run directly.
+
+3. Netlify
+
+Since the function has a 10s limit, it can't be called successfully.

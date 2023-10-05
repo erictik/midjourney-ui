@@ -256,6 +256,7 @@ const Midjourney: React.FC = () => {
                 type="primary"
                 loading={loading}
                 onClick={() => clickHandler(option)}
+                disabled={option.label === "❤️"}
               >
                 {option.label}
               </Button>

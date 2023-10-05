@@ -44,7 +44,11 @@ const findIframe = async (page: Page) => {
 const timeout = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
 const getIframeAddress = async (messageId: string) => {
-  const browser = await puppeteer.launch({
+  const browser = process.env.PUPPETEER_CHROME_BIN ? await puppeteer.launch({
+    executablePath: process.env.PUPPETEER_CHROME_BIN,
+    headless: 'new',
+    args: ['--no-sandbox', '--headless', '--disable-gpu'],
+  }) : await puppeteer.launch({
     args: chromium.args,
     defaultViewport: chromium.defaultViewport,
     executablePath: await chromium.executablePath(),
@@ -80,15 +84,15 @@ const getIframeAddress = async (messageId: string) => {
   );
 
   let retried = 0;
-  while (await findButton(page, messageId) === false && retried < 5) {
-    await timeout(2000);
+  while (await findButton(page, messageId) === false && retried < 10) {
+    await timeout(1000);
     retried++;
   }
 
   retried = 0;
   let result = null;
-  while (!result && retried < 5) {
-    await timeout(2000);
+  while (!result && retried < 10) {
+    await timeout(1000);
     result = await findIframe(page)
     retried++;
   }

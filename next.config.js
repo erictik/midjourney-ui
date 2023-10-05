@@ -15,6 +15,11 @@ const nextConfig = {
       },
     ];
   },
+  publicRuntimeConfig: {
+    NEXT_PUBLIC_AUTH_NAME: process.env.NEXT_PUBLIC_AUTH_NAME,
+    NEXT_PUBLIC_AUTH_CODE: process.env.NEXT_PUBLIC_AUTH_CODE,
+    NEXT_PUBLIC_AUTH_PROVIDER: process.env.NEXT_PUBLIC_AUTH_PROVIDER,
+  }
 };
 
 module.exports = nextConfig;

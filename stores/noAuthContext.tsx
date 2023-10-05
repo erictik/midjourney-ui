@@ -1,5 +1,7 @@
 import React, { createContext, useState, ReactNode } from "react";
 import { AuthContextType, User } from "./authContextType";
+import getConfig from "next/config";
+const { publicRuntimeConfig } = getConfig();
 
 
 const NoAuthContext = createContext<AuthContextType>({
@@ -11,7 +13,7 @@ const NoAuthContext = createContext<AuthContextType>({
 });
 
 export const NoAuthContextProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
-  const [user] = useState<User | null>({user_metadata: {full_name: process.env.NEXT_PUBLIC_AUTH_NAME || "Eric"}});
+  const [user] = useState<User | null>({user_metadata: {full_name: publicRuntimeConfig.NEXT_PUBLIC_AUTH_NAME || "Eric"}});
   const [authReady] = useState(true);
 
   const login = () => {};
