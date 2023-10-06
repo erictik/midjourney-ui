@@ -19,8 +19,12 @@ const Index: React.FC = () => {
   return (
     <div className="login-background p-10 flex items-center justify-around">
       <div>
-        <Typography.Title>AI | MidJourney</Typography.Title>
-        <Typography.Title>Powered Life</Typography.Title>
+        <Typography.Title>
+          <div className="text-black">AI | MidJourney</div>
+        </Typography.Title>
+        <Typography.Title>
+          <div className="text-black">Powered Life</div>
+        </Typography.Title>
       </div>
       <Divider type="vertical" />
       <div>

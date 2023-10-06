@@ -109,14 +109,14 @@ docker build -t erictik/midjourney-ui
 ## Enable Auth
 1. No auth
 
-No addition environment variables.
+No addition environment variables required.
 
 2. Code
 ```bash
 NEXT_PUBLIC_AUTH_PROVIDER=code
 NEXT_PUBLIC_AUTH_CODE=123456
 ```
-Input code to launch app
+Input auth code to launch app
 ![code](./images/codelogin.png)
 
 3. Netlify
@@ -138,7 +138,20 @@ export PUPPETEER_CHROME_BIN="C:\\Program Files (x86)\\Google\\Chrome\\Applicatio
 
 2. Docker
 
-Already be set up, can run directly.
+Add the follow content into `Dockerfile`, and rebuild docker image:
+```Dockerfile
+RUN apk add -q --update --no-cache \
+      chromium \
+      nss \
+      freetype \
+      freetype-dev \
+      harfbuzz \
+      ca-certificates \
+      ttf-freefont
+
+ENV PUPPETEER_CHROME_BIN="/usr/bin/chromium-browser"
+ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD="true"
+```
 
 3. Netlify
 

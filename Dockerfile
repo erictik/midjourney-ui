@@ -2,18 +2,6 @@
 FROM node:20-alpine AS production
 WORKDIR /dist
 
-RUN apk add -q --update --no-cache \
-      chromium \
-      nss \
-      freetype \
-      freetype-dev \
-      harfbuzz \
-      ca-certificates \
-      ttf-freefont
-
-ENV PUPPETEER_CHROME_BIN="/usr/bin/chromium-browser"
-ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD="true"
-
 COPY .next ./.next
 COPY public ./public
 COPY package*.json ./
