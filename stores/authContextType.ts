@@ -3,6 +3,8 @@ export interface AuthContextType {
   login: () => void;
   logout: () => void;
   authReady: boolean;
+  type: string;
+  loginWithCode?: (code: string) => void;
 }
 
 export interface User {
